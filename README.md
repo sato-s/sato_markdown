@@ -1,7 +1,20 @@
+Sato's Markdown Converter
+===============================
+
+## Feature
+
+- Convert markdown into beautiful HTML.
+- Converted HTML includes all javascript and css in its body.
+- Syntax highlight with prism.js.
+
 
 ## Usage
 
 ```
-bundle install
-budle exec ruby convert.rb sample.md > sample.html
+gem install sato_markdown
+sato_markdown sample.md > sample.html
 ```
+
+## Thanks
+
+- [Prism](https://prismjs.com/)

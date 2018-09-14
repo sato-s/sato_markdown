@@ -1,13 +1,18 @@
+GIT
+  remote: https://github.com/vmg/redcarpet.git
+  revision: 92a7b3ae2241b862e9bf45e0af3cf53ebdfb0afb
+  specs:
+    redcarpet (3.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    redcarpet (3.4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  redcarpet
+  redcarpet!
 
 BUNDLED WITH
-   1.13.7
+   1.16.2

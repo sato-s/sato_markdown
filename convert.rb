@@ -1,6 +1,5 @@
 require 'redcarpet'
 require 'erb'
-require 'pry'
 
 class Markdown
 
@@ -8,15 +7,22 @@ class Markdown
     @markdown = markdown
     @css = ""
     @js = ""
+    load_plugin('vendor/jquery')
+    load_plugin('vendor/sticky-kit') # Need to install after jquery
     load_plugin('vendor/prism')
     load_plugin('vendor/github-markdown')
+    load_css('css/toc.css')
   end
 
   # Table of contents
   def toc
-    toc_renderer = Redcarpet::Render::HTML_TOC.new
+    toc_renderer = Redcarpet::Render::HTML_TOC.new(nesting_level: 2..4)
     toc_markdown = Redcarpet::Markdown.new(toc_renderer)
-    toc_markdown.render(@markdown)
+    <<-TOC
+    <div id="toc">
+      #{toc_markdown.render(@markdown)}
+    </div>
+    TOC
   end
 
   # HTML contents
@@ -25,7 +31,7 @@ class Markdown
       with_toc_data: true,
       hard_wrap: true,
     )
-    content_markdown = Redcarpet::Markdown.new(content_renderer, 
+    content_markdown = Redcarpet::Markdown.new(content_renderer,
       fenced_code_blocks: true,
       autolink: true,
       tables: true,
@@ -53,27 +59,25 @@ class Markdown
 
   # Load css and javascript in certain directory
   def load_plugin(dirname)
-    css_list = Dir.glob(File.join(__dir__, dirname,'*.css'))
-    css_list.each{|css| load_css(css)}
-    js_list = Dir.glob(File.join(__dir__, dirname,'*.js'))
-    js_list.each{|js| load_js(js)}
+    files = Dir.entries(dirname).map{|f| File.join(dirname, f)}
+    files.grep(/.*\.css/).each{|css| load_css(css)}
+    files.grep(/.*\.js/).each{|js| load_js(js)}
   end
 
-  def load_css(filepath)
-    css = File.read(filepath)
+  def load_css(relative_path)
+    abs_path = File.join(__dir__, relative_path)
+    css = File.read(abs_path)
     @css += css
   end
 
-  def load_js(filepath)
-    js = File.read(filepath)
+  def load_js(relative_path)
+    abs_path = File.join(__dir__, relative_path)
+    js = File.read(abs_path)
     @js += js
   end
 
 end
 
-
-
-
-raw = STDIN.read
+raw = File.read(ARGV.first)
 md = Markdown.new raw
 puts md.to_html

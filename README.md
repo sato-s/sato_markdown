@@ -4,9 +4,8 @@ Sato's Markdown Converter
 ## Feature
 
 - Convert markdown into beautiful HTML.
-- Converted HTML includes all javascript and css in its body.
+- Converted HTML includes all javascript and css in it for easy distribution.
 - Syntax highlight with prism.js.
-
 
 ## Usage
 

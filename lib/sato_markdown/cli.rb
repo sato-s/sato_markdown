@@ -9,6 +9,10 @@ module SatoMarkdown
       end
 
       file = argv.first
+      unless File.file? file
+        puts "No such file #{file}"
+        exit 1
+      end
       raw = File.read(file)
       markdown = SatoMarkdown::Markdown.new raw
       puts markdown.to_html

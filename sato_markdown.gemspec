@@ -6,8 +6,8 @@ require 'sato_markdown/version'
 Gem::Specification.new do |spec|
   spec.name          = "sato_markdown"
   spec.version       = SatoMarkdown::VERSION
-  spec.authors       = ["sato sawahiko"]
-  spec.email         = ["sato.sawahiko@gmail.com"]
+  spec.authors       = ["sato-s"]
+  spec.email         = ["s.sato.desu@gmail.com"]
 
   spec.summary       = %q{sato's markdown converter}
   spec.description   = %q{sato's markdown converter}

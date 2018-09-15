@@ -18,3 +18,4 @@ sato_markdown sample.md > sample.html
 ## Thanks
 
 - [Prism](https://prismjs.com/)
+- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)

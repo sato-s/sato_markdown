@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["s.sato.desu@gmail.com"]
 
   spec.summary       = %q{sato's markdown converter}
-  spec.description   = %q{sato's markdown converter}
+  spec.description   = %q{Convert markdown into beautiful HTML which you can distribute easily}
   spec.homepage      = "https://github.com/sato-s/sato_markdown"
   spec.license       = "MIT"
 
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "redcarpet"
+  spec.add_dependency "redcarpet", "~> 3.3"
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
 end

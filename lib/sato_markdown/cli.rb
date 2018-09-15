@@ -10,7 +10,7 @@ module SatoMarkdown
 
       file = argv.first
       unless File.file? file
-        puts "No such file #{file}"
+        STDERR.puts "No such file #{file}"
         exit 1
       end
       raw = File.read(file)

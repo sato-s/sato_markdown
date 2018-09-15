@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
 require 'sato_markdown'
 
 SatoMarkdown::CLI.process(ARGV)

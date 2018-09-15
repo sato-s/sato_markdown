@@ -9,7 +9,6 @@ module SatoMarkdown
       @css = ""
       @js = ""
       load_plugin('vendor/jquery')
-      load_plugin('vendor/sticky-kit') # Need to load after jquery
       load_plugin('vendor/prism')
       load_plugin('vendor/github-markdown')
       load_css('css/toc.css')

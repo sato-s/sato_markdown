@@ -42,7 +42,7 @@ module SatoMarkdown
       if options[:output].nil?
         puts markdown.to_html
       else
-        output_file = File.join(Dir.pwd, options[:output])
+        output_file = options[:output]
         File.write(output_file, markdown.to_html)
       end
 

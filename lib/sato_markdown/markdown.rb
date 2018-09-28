@@ -5,20 +5,21 @@ require 'base64'
 module SatoMarkdown
   class Markdown
 
-    def initialize(markdown)
+    def initialize(markdown, options)
       @markdown = markdown
       @css = ""
       @js = ""
+      @options = options
       load_plugin('vendor/jquery')
       load_plugin('vendor/prism')
       load_plugin('vendor/github-markdown')
       load_css('css/toc.css')
-      load_font('vendor/fonts/PopRumCute.ttf')
+      load_font("vendor/fonts/#{@options[:font]}.ttf")
     end
 
     # Table of contents
     def toc
-      toc_renderer = Redcarpet::Render::HTML_TOC.new(nesting_level: 3)
+      toc_renderer = Redcarpet::Render::HTML_TOC.new(nesting_level: @options[:toc_nest])
       toc_markdown = Redcarpet::Markdown.new(toc_renderer)
       <<-TOC
       <div id="toc">

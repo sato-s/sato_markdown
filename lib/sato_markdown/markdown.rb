@@ -1,5 +1,6 @@
 require 'redcarpet'
 require 'erb'
+require 'base64'
 
 module SatoMarkdown
   class Markdown
@@ -12,6 +13,7 @@ module SatoMarkdown
       load_plugin('vendor/prism')
       load_plugin('vendor/github-markdown')
       load_css('css/toc.css')
+      load_font('vendor/fonts/PopRumCute.ttf')
     end
 
     # Table of contents
@@ -40,6 +42,10 @@ module SatoMarkdown
         quote: true,
         strikethrough: true)
       content_markdown.render(@markdown)
+    end
+
+    def font
+      @font
     end
 
     def css
@@ -73,6 +79,11 @@ module SatoMarkdown
     def load_js(relative_path)
       js = File.read(Util.to_loadpath(relative_path))
       @js += js
+    end
+
+    def load_font(relative_path)
+      font = File.read(Util.to_loadpath(relative_path))
+      @font = Base64.encode64(font).delete("\n")
     end
 
   end

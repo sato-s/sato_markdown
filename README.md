@@ -15,7 +15,7 @@ Intended for replacement for MS word.
 
 ```
 gem install sato_markdown
-sato_markdown sample.md > sample.html
+sato_markdown sample.md -o sample.html
 ```
 
 ## Thanks

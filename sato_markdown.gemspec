@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["sato-s"]
   spec.email         = ["s.sato.desu@gmail.com"]
 
-  spec.summary       = %q{sato's markdown converter}
-  spec.description   = %q{Convert markdown into beautiful HTML which you can distribute easily}
+  spec.summary       = %q{sato's markdown compiler}
+  spec.description   = %q{Compile markdown into beautiful HTML which you can distribute easily}
   spec.homepage      = "https://github.com/sato-s/sato_markdown"
   spec.license       = "MIT"
 

@@ -8,7 +8,7 @@ plain
 **strong**  
 ***italic strong***  
 ~~scratch~~  
-日本語にほんごニホンゴおみそしるス   
+日本語にほんごニホンゴ
 
 ## Code block
 

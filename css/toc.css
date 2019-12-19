@@ -7,4 +7,5 @@
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 80px;
+    background: rgba(182, 191, 234, 0.56);
 }

@@ -13,6 +13,10 @@ Intended for replacement for MS word.
 
 ## Usage
 
+![sample](sample.PNG)
+
+## Usage
+
 ```
 gem install sato_markdown
 sato_markdown sample.md -o sample.html

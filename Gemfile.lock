@@ -1,18 +1,22 @@
-GIT
-  remote: https://github.com/vmg/redcarpet.git
-  revision: 92a7b3ae2241b862e9bf45e0af3cf53ebdfb0afb
+PATH
+  remote: .
   specs:
-    redcarpet (3.4.0)
+    sato_markdown (0.1.0)
+      redcarpet (~> 3.3)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    rake (10.5.0)
+    redcarpet (3.6.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
-  redcarpet!
+  bundler (~> 2.2.33)
+  rake (~> 10.0)
+  sato_markdown!
 
 BUNDLED WITH
-   1.16.2
+   2.2.33
